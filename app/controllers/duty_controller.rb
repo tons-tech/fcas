@@ -29,7 +29,6 @@ class DutyController < ApplicationController
   def investigate_working_status(person_group_id, name, file_name)
     #does created_at column exits? with the date of today within name.
     user = User.find_by(name: name, department_id: person_group_id)
-    #change unless Duty.where... to if not
     if not Duty.where(user_id: user).exists?(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
       puts "start duty"
       start_duty(user)

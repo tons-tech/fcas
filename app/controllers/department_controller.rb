@@ -14,7 +14,6 @@ class DepartmentController < ApplicationController
   end
 
   def manage
-    #getting list of groups
     response = JSON.parse(list_group)
     @response = response.map! do |i|
       i["personGroupId"]

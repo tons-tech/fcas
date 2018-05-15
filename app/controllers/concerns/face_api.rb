@@ -1,5 +1,5 @@
 module FaceApi
-  #This is an official code from Api referrence
+  #This is the official code from Api referrence
   def create_group(id, name)
     uri = URI(azure_face_uri << id)
     uri.query = URI.encode_www_form({
