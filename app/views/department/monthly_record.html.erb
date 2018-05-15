@@ -1,0 +1,18 @@
+<%= content_tag :h1, "Monthly report of #{@month}" %>
+
+<table class="u-full-width">
+  <thead>
+  <tr>
+    <th>Staff Name</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @staffs.each do |i| %>
+    <tr>
+      <td><%= i.name %></td>
+      <td class="btn-r"><%= button_to "record", department_staff_record_path, params: {department_id: params[:department_id], month: @month, user_id: i}, method: :get %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<%= content_tag :h1, "Monthly report for #{@name.name} of #{@month}" %>
+
+<table class="u-full-width">
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>Exit Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if !@records.empty? %>
+    <% @records.each do |i| %>
+      <tr>
+        <td><%= i.duty_date %></td>
+        <td><%= i.start_time %></td>
+        <td><%= i.exit_time %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td>RECORD NOT EXISTS</td>
+      <td>RECORD NOT EXISTS</td>
+      <td>RECORD NOT EXISTS</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "DL", department_staff_record_path(format: :csv, user_id: @name.id, month: @month, department_id: params[:department_id]) %>

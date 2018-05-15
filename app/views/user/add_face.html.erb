@@ -1,0 +1,8 @@
+<%= content_tag :h1, "Post Face Image" %>
+
+<%= form_tag("/user/create_face", multipart: true, method: :post) do %>
+  <%= file_field_tag :image %>
+  <%= hidden_field_tag :department_id, @person_info["department_id"] %>
+  <%= hidden_field_tag :person_id, @person_info["person_id"] %>
+  <%= submit_tag "SUBMIT" %>
+<% end %>

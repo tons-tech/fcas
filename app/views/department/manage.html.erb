@@ -1,0 +1,23 @@
+<h1>Manage Department</h1>
+
+<table class="u-full-width">
+  <thead>
+  <tr>
+    <th>Department Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @response.each do |i| %>
+  <tr>
+    <td><%= i %></td>
+    <td class="btn-r"><%= button_to "record", department_record_path, params: {department_id: i}, method: :get %></td>
+    <td class="btn-r"><%= button_to "delete", department_destroy_path, params: {department_id: i}, method: :delete %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>Documentation</h2>
+<p>Attention: This deletion include registered staffs data along with the department.</p>

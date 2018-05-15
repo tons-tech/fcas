@@ -1,0 +1,14 @@
+<h1>Register new staff</h1>
+
+<%= form_for(@user, :url => { :controller => :user, :action => "create" }, method: :post ) do |f| %>
+  <div class="row">
+    <%= f.select :department_id, options_for_select(@response), {}, class: "five columns" %>
+    <%= f.text_field :name, {placeholder: "staff name", class: "five columns"} %>
+    <%= f.submit "Submit", class: "two columns" %>
+  </div>
+<% end %>
+
+<h2>Documentation</h2>
+<ul>
+  <li>Select the department that the new staff belongs to and type full name.</li>
+</ul>

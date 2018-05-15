@@ -1,0 +1,11 @@
+<%= content_tag :h1, "Duty control system" %>
+<canvas id="canvas"></canvas>
+<div id="videobox">
+  <video id="video" autoplay playsinline></video>
+</div>
+<button id='snap'>capture</button>
+<div id='snap-image'>
+  <img id='snapped'>
+</div>
+
+<%= javascript_include_tag "cam"%>

@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require normalize
+ *= require skeleton
+ */
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+header {
+    padding: 20px 0;
+    margin-bottom: 40px;
+    background: #33C3F0;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.flash {
+    background: #eaf9fd;
+    padding: 20px;
+    border-radius: 4px;
+    border: 2px solid #99e1f7;
+    margin-bottom: 20px;
+}
+
+.alert {
+    background: #f2dede;
+    border: 2px solid #a94442;
+}
+
+table form {
+    display: inline;
+}
+
+table form input {
+    margin: 0;
+}
+
+table tr th:first-child {
+    width: 40%;
+}
+
+.btn-r {
+    text-align: right;
+}
+#snap-image {
+    display: none;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FaceApp</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "application" %>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <%= link_to "TOP", "/" %>
+        <%= link_to "Create Department", "/department/new" %>
+        <%= link_to "Manage Department", "/department/manage" %>
+        <%= link_to "Add Staff", "/user/new" %>
+        <%= link_to "Manage Staff", "/user/manage_staff" %>
+        <%= link_to "Control Duty", "/duty/index", data: {no_turbolink: true} %>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+      <% elsif flash[:alert] %>
+      <div class="flash alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>

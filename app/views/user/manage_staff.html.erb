@@ -1,0 +1,28 @@
+<%= content_tag :h1, @title %>
+<% @groups.each do |i| %>
+  <%= content_tag :h2, i["name"] %>
+  <table class="u-full-width">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% i["names"].each do |x| %>
+      <tr>
+        <td><%= content_tag :a, x["name"] %></td>
+        <td class="btn-r"><%= button_to "Add face", user_add_face_path, params:{ user: { department_id: i["personGroupId"], person_id: x["personId"]}}, method: :get %></td>
+        <td class="btn-r"><%= button_to "Delete", user_destroy_path, params: { user: { name: x["name"], department_id: i["personGroupId"], person_id: x["personId"]}}, method: :delete %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<h2>Documentation</h2>
+<ul>
+  <li>Must add face image to be able to use the face confirmation</li>
+  <li>The new staff data can be also deleted from this menu.</li>
+</ul>

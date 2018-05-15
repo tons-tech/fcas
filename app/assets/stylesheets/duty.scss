@@ -1,0 +1,15 @@
+// Place all the styles related to the duty controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#canvas {
+  display: none;
+  background: black;
+}
+
+#video {
+  width: 100%;
+  height: 600px;
+  transform: rotateY(180deg);
+  background: black;
+}

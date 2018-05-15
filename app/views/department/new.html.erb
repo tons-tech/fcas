@@ -1,0 +1,18 @@
+<h1>Create Department</h1>
+
+<%=form_tag({controller: :department, action: :create }, { method: :post }) do %>
+<div class="row">
+  <%= text_field_tag :groupid, nil, placeholder: "Input Department ID", class: "five columns" %>
+  <%= text_field_tag :groupname, nil, placeholder: "Input Depatrment Name", class: "five columns" %>
+  <%= submit_tag "submit", class: "button-primary two columns" %>
+</div>
+<% end %>
+
+<h2>Documentation</h2>
+<ol>
+  <li>Input department id and name. The valid characters include numbers, English letters in lower case, '-' and '_'. The maximum length of the personGroupId is 64.</li>
+  <ul>
+    <li>Sample ID: sales_team01_id</li>
+    <li>Sample Name: sales_team01</li>
+  </ul>
+</ol>
